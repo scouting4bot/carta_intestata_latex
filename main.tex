@@ -14,7 +14,7 @@
 % - several other elements.
 
 
-\documentclass[9pt, a4paper]{letter}
+\documentclass[7pt, a4paper]{letter}
 
 % Add the inputenc package to declare the encoding for the document. Is optional but recommended.
 \usepackage[utf8]{inputenc}
@@ -96,6 +96,18 @@
 \usepackage[T1]{fontenc}
 \renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
 
+
+
+\usepackage{atbegshi}
+\usepackage{textpos}
+
+\TPGrid{8}{11}
+\AtBeginShipout{%
+    \begin{textblock}{3}(-2.5,0)
+        \includegraphics{leftBar}
+    \end{textblock}
+}
+
 %\hoffset=5.5cm
 %\voffset=56.9pt
 %\textwidth=11.5cm
@@ -115,7 +127,7 @@
     \end{tikzpicture}
     \begin{flushleft}
         \bfseries
-        \large
+        %\large
         Corpo Nazionale Giovani Esploratori ed Esploratrici Italiani\\Associazione di Promozione Sociale (ed) Ente Morale\\sotto l’Alto Patronato del Presidente della Repubblica
         \newline
         \newline
