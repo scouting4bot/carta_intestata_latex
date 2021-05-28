@@ -1,0 +1,130 @@
+% ***** ***** ***** Intro ***** ***** ***** Begin
+% Syntax is:
+%       %           = comment
+%       \LaTeX{}    = print the LaTeX logo.
+%       \command[parameter1, parameter2]{input}
+% ***** ***** ***** Intro ***** ***** ***** End
+
+
+% ***** ***** ***** PREAMBLE ***** ***** ***** Begin
+% The preamble defines:
+% - the type of the document you are writing
+% - the language you are writing in,
+% - the packages you would like to use (more on this later)
+% - several other elements.
+
+
+\documentclass[9pt, a4paper]{letter}
+
+% Add the inputenc package to declare the encoding for the document. Is optional but recommended.
+\usepackage[utf8]{inputenc}
+
+% Add margin notes
+\usepackage[paper=a4paper,right=2cm,left=7.75cm,top=1cm,bottom=3cm]{geometry}
+
+\usepackage{everyshi}
+\AtNextShipout{\global\leftskip=-4.25cm\relax}
+
+% Add the graphicx package for images management.
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+%\usepackage{marginnote}
+
+%\reversemarginpar
+
+% fancyhdr is imported to customize the footer and header of document
+\usepackage{fancyhdr}
+% sets the page style called headings to the current document.
+% - headings
+% - empty: Both the header and footer are cleared (blank) in this page style.
+% - plain: This is the default style. The header is empty and the footer contains page numbers in the centre.
+% - myheadings: As shown in the introduction,The footer is empty in this page style. The header contains the page number on right side (on even pages) or on left side (on odd pages) along with other user-supplied information; there is an exception for the first page of each chapter, where the footer contains centred page number while the header is blank.
+% - fancy: custom style
+\pagestyle{fancy}
+% clear header and footer, otherwise the elements of the default "plain" page style will appear.
+\fancyhf{}
+
+%%%%%%%% HEADER setup
+%% Prints the text included inside the braces on the right side of the header.
+%\rhead{right head}
+%% Prints the text set inside the braces on the left side of the header.
+%\lhead{left head}
+%% Prints the text set inside the braces as centred on the header.
+%\chead{center head}
+
+%%%%%%%% FOOTER setup
+%% Prints the text included inside the braces on the right side of the footer. The \thepage introduces the page number. In the example will concatenate the "Page" word to the number.
+%\rfoot{Page \thepage}
+%\rfoot{\thepage}
+%% Prints the text included inside the braces on the left side of the footer.
+%\lfoot{left foot}
+%% Prints the text included inside the braces as centred on the header.
+%\cfoot{center foot}
+
+%%%%%%%% FANCY HEADER/FOOTER setup
+%% If your document is double-sided, for example a book, and you need to customize the header and the footer, the recommended commands in this case are \fancyhead and \fancyfoot with several selectors passed as parameters. Let's see:
+%% - E for even page
+%% - O for odd page
+%% - L for left side
+%% - C for centered
+%% - R for right side
+%\fancyhead[LE,RO]{external side}
+%\fancyhead[RE,LO]{internal side}
+%\fancyfoot[CE,CO]{\leftmark}
+%\fancyfoot[LE,RO]{ext \thepage}
+%\fancyhead[R]{}
+% Set the right side of the footer to be the page number
+\fancyfoot[R]{\thepage}
+
+%%%%%%%% DECORATIVE setup
+%% This sets the header line thickness to 2pt.
+%\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\headrulewidth}{0pt}
+%% Sets the footer line thickness to 1pt.
+%\renewcommand{\footrulewidth}{1pt}
+
+
+% manages the left margin images
+\usepackage{tikz}
+
+\usepackage{lipsum}
+
+% Font
+\usepackage[defaultfam,tabular,lining]{montserrat} %% Option 'defaultfam'
+%% only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
+
+%\hoffset=5.5cm
+%\voffset=56.9pt
+%\textwidth=11.5cm
+%\usepackage{parskip}
+% ***** ***** ***** PREAMBLE ***** ***** ***** end
+
+% ***** ***** ***** BODY ***** ***** ***** Begin
+% Start to write the content of our document (the body).
+\begin{document}
+    
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north west,yshift=-2cm,xshift=2cm]
+        at (current page.north west)
+        {
+            \includegraphics[width=.48\textwidth]{brancae}
+        };
+    \end{tikzpicture}
+    \begin{flushleft}
+        \bfseries
+        \large
+        Corpo Nazionale Giovani Esploratori ed Esploratrici Italiani\\Associazione di Promozione Sociale (ed) Ente Morale\\sotto l’Alto Patronato del Presidente della Repubblica
+        \newline
+        \newline
+        \newline
+    \end{flushleft}
+    
+    \lipsum[1-19]
+    
+    
+    % End to write the content of our document (the body).
+\end{document}
+% ***** ***** ***** BODY ***** ***** ***** End
