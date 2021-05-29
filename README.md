@@ -1,18 +1,24 @@
+
 # carta intestata latex
 Progetto basato sulla carta intestata del [CNGEI](https://cngei.it/), è tuttora in work in progress ed incompleto. Per maggiori dettagli, si veda il paragrafo sugli sviluppi.
 
 ## Sviluppi
  - versione 0.0
-   - grafica
-     - ~~barra laterale  prima pagina~~
-     - ~~barra laterale  pagine successive~~
-     - ~~intestazione~~
-     - ~~piè di pagina~~
-     - configurazione testo principale
-   - configurazione
-     - font & dimensione intestazione
-     - font & dimensione piè di pagina
-     - font & dimensione testo principale
+   - [x] grafica
+     - [x] barra laterale prima pagina
+     - [x] barra laterale pagine successive
+     - [x] intestazione
+     - [x] piè di pagina
+     - [x] font
+   - [ ] configurazione
+     - [ ] dimensione caratteri
+		  - [ ] intestazione
+		  - [ ] piè di pagina
+		  - [ ] testo principale
+     - [ ] margini
+       - [ ] margini di pagina da rivedere
+       - [ ] **ATTENZIONE**: nella seconda pagina il primo paragrafo si porta i margini precedenti
+    - [ ] revisione finale dell'allineamento delle immagini
  - versione 1.0
    - Portare i commenti in italiano
    - Finire la guida d'uso
@@ -23,6 +29,9 @@ Progetto basato sulla carta intestata del [CNGEI](https://cngei.it/), è tuttora
 
 ## Come usare la Carta Intestata su LaTeX
 ### Prerequisiti
-L'idea è che tutto sia commentato abbastanza chiaramente da non necessitare tropper spiegazioni aggiuntive. Vediamo come va.
-- un editor LaTeX
-- conoscenza minima del LaTeX
+- un editor LaTeX sul computer locale od online (es. https://www.overleaf.com/).
+- conoscenza minima del LaTeX: l'idea da cui nasce il progetto è che tutto sia commentato abbastanza chiaramente da non necessitare tropper spiegazioni aggiuntive.
+### Configurare l'editor
+**Questo paragrafo non è ancora completo!**
+- Scarica l'intero progetto [TODO: mettere spiegazione passo-passo]
+- 
