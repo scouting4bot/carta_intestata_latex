@@ -14,7 +14,7 @@
 % - several other elements.
 
 
-\documentclass[7pt, a4paper]{letter}
+\documentclass[9pt, a4paper]{letter}
 
 % Add the inputenc package to declare the encoding for the document. Is optional but recommended.
 \usepackage[utf8]{inputenc}
@@ -31,7 +31,16 @@
 %% only if the base font of the document is to be sans serif
 %\usepackage[T1]{fontenc}
 %\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
-
+\usepackage{fontspec}
+\setsansfont{Montserrat}[
+    Path=./MontserratFontFiles/,
+    Scale=0.95,
+    Extension = .ttf,
+    UprightFont=*-Light,
+    BoldFont=*-SemiBold,
+    ItalicFont=*-LightItalic,
+    BoldItalicFont=*-SemiBoldItalic
+    ]
 
 % fancyhdr is imported to customize the footer and header of document
 \usepackage{fancyhdr}
@@ -46,46 +55,42 @@
 \fancyhf{}
 
 
-\fancypagestyle{plain}{%
-    \fancyhf{} % clear all header and footer fields
-    
-    %%%%%%%% HEADER setup
-    %% Prints the text included inside the braces on the right side of the header.
-    %\rhead{right head}
-    %% Prints the text set inside the braces on the left side of the header.
-    %\lhead{left head}
-    %% Prints the text set inside the braces as centred on the header.
-    %\chead{center head}
-    
-    %%%%%%%% FOOTER setup
-    %% Prints the text included inside the braces on the right side of the footer. The \thepage introduces the page number. In the example will concatenate the "Page" word to the number.
-    %\rfoot{Page \thepage}
-    %\rfoot{\thepage}
-    %% Prints the text included inside the braces on the left side of the footer.
-    %\lfoot{left foot}
-    %% Prints the text included inside the braces as centred on the header.
-    %\cfoot{center foot}
-    
-    %%%%%%%% FANCY HEADER/FOOTER setup
-    %% If your document is double-sided, for example a book, and you need to customize the header and the footer, the recommended commands in this case are \fancyhead and \fancyfoot with several selectors passed as parameters. Let's see:
-    %% - E for even page
-    %% - O for odd page
-    %% - L for left side
-    %% - C for centered
-    %% - R for right side
-    %\fancyhead[LE,RO]{external side}
-    %\fancyhead[RE,LO]{internal side}
-    %\fancyfoot[CE,CO]{\leftmark}
-    %\fancyfoot[LE,RO]{ext \thepage}
-    %\fancyhead[R]{}
-    % Set the right side of the footer to be the page number
-    \fancyfoot[R]{\fontfamily{montserrat}\fontseries{b}\fontsize{9}{11}\selectfont\thepage}
-    %\fancyfoot[R]{\sffamily\fontsize{19pt}{19pt}\selectfont\thepage} % except the center
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\footrulewidth}{0pt}
-}
-\pagestyle{plain}
 
+\fancyhf{} % clear all header and footer fields
+
+%%%%%%%% HEADER setup
+%% Prints the text included inside the braces on the right side of the header.
+%\rhead{right head}
+%% Prints the text set inside the braces on the left side of the header.
+%\lhead{left head}
+%% Prints the text set inside the braces as centred on the header.
+%\chead{center head}
+
+%%%%%%%% FOOTER setup
+%% Prints the text included inside the braces on the right side of the footer. The \thepage introduces the page number. In the example will concatenate the "Page" word to the number.
+%\rfoot{Page \thepage}
+%\rfoot{\thepage}
+%% Prints the text included inside the braces on the left side of the footer.
+%\lfoot{left foot}
+%% Prints the text included inside the braces as centred on the header.
+%\cfoot{center foot}
+
+%%%%%%%% FANCY HEADER/FOOTER setup
+%% If your document is double-sided, for example a book, and you need to customize the header and the footer, the recommended commands in this case are \fancyhead and \fancyfoot with several selectors passed as parameters. Let's see:
+%% - E for even page
+%% - O for odd page
+%% - L for left side
+%% - C for centered
+%% - R for right side
+%\fancyhead[LE,RO]{external side}
+%\fancyhead[RE,LO]{internal side}
+%\fancyfoot[CE,CO]{\leftmark}
+%\fancyfoot[LE,RO]{ext \thepage}
+%\fancyhead[R]{}
+% Set the right side of the footer to be the page number
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 \usepackage{everyshi}
 \AtNextShipout{\global\leftskip=-4.25cm\relax}
 
