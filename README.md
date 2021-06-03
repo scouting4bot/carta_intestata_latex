@@ -1,5 +1,5 @@
 
-![License](https://img.shields.io/badge/status-work%20in%20progress-red) ![License](https://img.shields.io/badge/version-0.0.0-yellow) ![License](https://img.shields.io/github/languages/top/scouting4bot/carta_intestata_latex)
+![License](https://img.shields.io/badge/status-work%20in%20progress-red) ![License](https://img.shields.io/badge/version-0.1.0-yellow) ![License](https://img.shields.io/github/languages/top/scouting4bot/carta_intestata_latex)
 
 *Il progetto è ancora in fase di sviluppo (versione alpha). Per ora non consiglio l'uso.
 Per maggiori dettagli si veda il paragrafo sugli Sviluppi.*
@@ -27,9 +27,37 @@ Not available. The usage of this project is reserved to members of an italian sc
 - un editor LaTeX sul computer locale od online (es. https://www.overleaf.com/).
 - conoscenza minima del LaTeX.
 
-## Configurare l'editor
-**Questo paragrafo non è ancora completo!**
-- Scarica l'intero progetto [TODO: mettere spiegazione passo-passo]
+## Configurare Overleaf
+Overleaf è un sito che fornisce un editor intuitivo per latex.
+ 1. **scarica il progetto da git**:
+    -  puoi fare un clone del progetto se hai dimestichezza con git (non è difficile, online trovi facilmente le istruzioni).
+    -  in alternativa scarica lo zip con tutto:
+       1. clicca il pulsante `Code` e seleziona `Download ZIP`.
+       2. decomprimi il file zip dove ti è più comodo
+       3. entra nella cartella "carta_intestata_latex-main" creata: qui troverai una serie di file e cartelle come descritte nel paragrafo sulla [struttura del progetto](#struttura-del-progetto) (immagini, fon, main.tex, readme).
+   2. **importa su Overleaf**: vai su overleaf https://www.overleaf.com/project
+       -  se hai premium, puoi scaricare il progetto direttamente da GitHub cliccando sul pulsante `New Project` e selezionando dal menù a tendina `Import from GitHub` [per dettagli rimando alle istruzioni di Overleaf](https://it.overleaf.com/learn/how-to/How_do_I_connect_an_Overleaf_project_with_a_repo_on_GitHub,_GitLab_or_BitBucket%3F).
+       -  in alternativa puoi importare a mano.
+          1. clicca sul pulsante `New Project`.
+          2. dal menù a tendina seleziona `blanck project` (progetto vuoto).
+          3. nel campo vuoto inserisci un nome per identificare il progetto (es. *carta intestata*).
+          4. clicca il pulsante `Create`.
+          5. ora sei nella schermata di lavoro. A sinistra c'è un'area che ti descrive il tavolo di lavoro con tutti i file disponibili. Tra i pulsanti in cima clicca quello con la freccia rivolta verso l'alto (Upload).
+          6. trascina i file che hai spacchettato precedentemente dallo ZIP scaricato da GitHub.
+          7. se ti segnala conflitti, seleziona la sovrascrittura.
+          8. attendi che sia eseguito il comando.
+          9. verifica l'organizzazione dei file: devono essere strutturati in cartelle come descritto in [struttura del progetto](#struttura-del-progetto). In caso di incongruenze puoi riorganizzarli creando le cartelle a mano con i pulsanti in cima al tavolo di lavoro.
+   3. **configura Overleaf**: in alto a sinistra clicca il pulsante `Menu` e cambia il compilatore a `XeLaTeX`.
+   4. **compila il progetto**
+          1. nel tavolo di lavoro a sinistra seleziona il file `main.tex`.
+          2. nell'area centrale vedrai il testo modificabile.
+          3. in cima all'area a destra puoi cliccare il pulsante `Recompile` per compilare il file `main.tex`.
+          4. una volta finito, overleaf ti visualizzerà un pdf di anteprima nell'area di destra.
+   5. **personalizza il file d'esempio**: se vuoi creare una circolare personalizzata, puoi fare le seguenti modifiche
+          1. ***barra laterale informativa***: a *riga 75* cambia `brancae` con il nome del file immagine che contiene le tue informazioni. Se non è disponibile, puoi crearlo e metterlo nella cartella `images`.
+          2. ***testo della circolare***: a *riga 105* sostituisci `\lipsum[1-19]` con il tuo testo. Mi raccomando *non rimuovere* `\end{document}` perché serve a LaTeX per chiudere il corpo del testo.
+          3. se vorrai vedere delle anteprime del tuo testo, ricordati di cliccare `Recompile`.
+    
 
 ## Come installare
 **Questo paragrafo non è ancora completo!**
@@ -47,9 +75,9 @@ Nessuna dipendenza è richiesta oltre all'editor LaTeX scelto dallo sviluppatore
 Una descrizione schematica del progetto:
 ```
 .
-├── MontserratFontFiles                   # cartella con i file per l'uso del font Montserrat
-├── images                    # cartella con le immagini
-├── main.tex                   # File tex in cui configurare la lettera con l'intestazione
+├── MontserratFontFiles   # cartella con i file per l'uso del font Montserrat
+├── images                # cartella con le immagini
+├── main.tex              # File tex in cui configurare la lettera con l'intestazione
 ├── LICENSE
 └── README.md
 ```	
@@ -79,31 +107,34 @@ L'analisi è stata eseguita con [FOSSA](https://fossa.com/pricing/).
 
 # Sviluppi futuri
  - **versione 0.1.0**
-   - [ ] licenza
-   - [ ] readme
+   - [x] ~~readme~~
      - [x] ~~struttura~~
-     - [ ] [badges](https://shields.io/)
-     - [ ] gif con [Recordit](http://recordit.co/)
-     - [ ] paragrafi incompleti
+     - [x] [~~badges](https://shields.io/)~~
+     - [x] ~~guida su come iniziare~~
    - [x] ~~grafica~~
      - [x] ~~barra laterale prima pagina~~
      - [x] ~~barra laterale pagine successive~~
      - [x] ~~intestazione~~
      - [x] ~~piè di pagina~~
      - [x] ~~font~~
-   - [ ] configurazione
-     - [ ] dimensione caratteri
-		  - [ ] intestazione
-		  - [ ] piè di pagina
-		  - [ ] testo principale
-     - [ ] margini
-       - [ ] margini di pagina da rivedere
-       - [ ] **ATTENZIONE**: nella seconda pagina il primo paragrafo si porta i margini precedenti
-    - [ ] revisione finale dell'allineamento delle immagini
+   - [x] ~~configurazione~~
+     - [x] ~~dimensione caratteri~~
+		  - [x] ~~intestazione~~
+		  - [x] ~~piè di pagina~~
+		  - [x] ~~testo principale~~
+     - [x] ~~margini~~
+       - [x] ~~margini di pagina da rivedere~~
+   - [x] ~~commenti in italiano~~
  - **versione 0.2.0**
-   - [ ] portare i commenti in italiano
-   - [ ] finire la guida d'uso
-   - [ ] aggiornare le immagini
+   - [ ] licenza
+   - [ ] readme
+     - [ ] gif con [Recordit](http://recordit.co/)
+     - [ ] finire la guida d'uso
+     - [ ] altri [badges](https://shields.io/)
+   - [ ] configurazione
+     - [ ] margini - **ATTENZIONE**: se il paragrafo scavalla alla seconda pagina, si porta i margini precedenti
+     - [ ] revisione allineamento delle immagini
+   - [ ] aggiornare le immagini nella cartella images
  - **versione 0.3.0**
    - [ ] sostituire le immagini laterali con un sistema configurabile
    - [ ] configurabilità settore/sezione automatica
