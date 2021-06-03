@@ -1,5 +1,6 @@
-
 # carta intestata latex
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fscouting4bot%2Fcarta_intestata_latex.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fscouting4bot%2Fcarta_intestata_latex?ref=badge_shield)
+
 Progetto basato sulla carta intestata del [CNGEI](https://cngei.it/), è tuttora in work in progress ed incompleto. Per maggiori dettagli, si veda il paragrafo sugli sviluppi.
 
 ## Sviluppi
@@ -35,3 +36,7 @@ Progetto basato sulla carta intestata del [CNGEI](https://cngei.it/), è tuttora
 **Questo paragrafo non è ancora completo!**
 - Scarica l'intero progetto [TODO: mettere spiegazione passo-passo]
 - 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fscouting4bot%2Fcarta_intestata_latex.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fscouting4bot%2Fcarta_intestata_latex?ref=badge_large)
