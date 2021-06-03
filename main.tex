@@ -1,36 +1,28 @@
-% ***** ***** ***** Intro ***** ***** ***** Begin
-% Syntax is:
-%       %           = comment
-%       \LaTeX{}    = print the LaTeX logo.
-%       \command[parameter1, parameter2]{input}
-% ***** ***** ***** Intro ***** ***** ***** End
+% ***** ***** ***** PREAMBOLO ***** ***** ***** Inizio
+% Il preambolo definisce:
+% - il tipo di documento che stai scrivendo
+% - il linguaggio che usi
+% - i pacchetti di librerie che vorresti usare
+% - alcune configurazioni iniziali
 
+% Qui viene configurata:
+% - caratteri alti 10 punti
+% - pagina A4
+% - la tipologia di documento di partenza (scrlttr2)
+\documentclass[10pt, a4paper]{scrlttr2}
 
-% ***** ***** ***** PREAMBLE ***** ***** ***** Begin
-% The preamble defines:
-% - the type of the document you are writing
-% - the language you are writing in,
-% - the packages you would like to use (more on this later)
-% - several other elements.
-
-
-\documentclass[9pt, a4paper]{letter}
-
-% Add the inputenc package to declare the encoding for the document. Is optional but recommended.
+% inputenc è un pacchetto opzionale ma utile per definire la codifica (nel nostro caso UTF-8)
 \usepackage[utf8]{inputenc}
 
-% Add margin notes
-\usepackage[paper=a4paper,right=2cm,left=7.75cm,top=1cm,bottom=3cm]{geometry}
+% geometry è un pacchetto che aiuta a gestire le geometrie nel documento. Nel nostro caso configuriamo i bordi
+\usepackage[paper=a4paper,right=2cm,left=7.75cm,top=1.7cm,bottom=3cm]{geometry}
 
-% Add the graphicx package for images management.
+% graphicx è un paccheto che useremo per la gestione delle immagini
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
-% Font
+% le seguenti righe gestiranno il font 
 \usepackage[defaultfam,light,tabular]{montserrat} %% Option 'defaultfam'
-%% only if the base font of the document is to be sans serif
-%\usepackage[T1]{fontenc}
-%\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
 \usepackage{fontspec}
 \setsansfont{Montserrat}[
     Path=./MontserratFontFiles/,
@@ -42,102 +34,61 @@
     BoldItalicFont=*-SemiBoldItalic
     ]
 
-% fancyhdr is imported to customize the footer and header of document
+% fancyhdr è un pacchetto usato per gestire intestazione e piè di pagina (nel nostro caso useremo lo stile fancy perché personabilizzabile
 \usepackage{fancyhdr}
-% sets the page style called headings to the current document.
-% - headings
-% - empty: Both the header and footer are cleared (blank) in this page style.
-% - plain: This is the default style. The header is empty and the footer contains page numbers in the centre.
-% - myheadings: As shown in the introduction,The footer is empty in this page style. The header contains the page number on right side (on even pages) or on left side (on odd pages) along with other user-supplied information; there is an exception for the first page of each chapter, where the footer contains centred page number while the header is blank.
-% - fancy: custom style
 \pagestyle{fancy}
-% clear header and footer, otherwise the elements of the default "plain" page style will appear.
+% questo comando pulisce intestazione e piè di pagina dalle configurazioni di default
 \fancyhf{}
-
-
-
-\fancyhf{} % clear all header and footer fields
-
-%%%%%%%% HEADER setup
-%% Prints the text included inside the braces on the right side of the header.
-%\rhead{right head}
-%% Prints the text set inside the braces on the left side of the header.
-%\lhead{left head}
-%% Prints the text set inside the braces as centred on the header.
-%\chead{center head}
-
-%%%%%%%% FOOTER setup
-%% Prints the text included inside the braces on the right side of the footer. The \thepage introduces the page number. In the example will concatenate the "Page" word to the number.
-%\rfoot{Page \thepage}
-%\rfoot{\thepage}
-%% Prints the text included inside the braces on the left side of the footer.
-%\lfoot{left foot}
-%% Prints the text included inside the braces as centred on the header.
-%\cfoot{center foot}
-
-%%%%%%%% FANCY HEADER/FOOTER setup
-%% If your document is double-sided, for example a book, and you need to customize the header and the footer, the recommended commands in this case are \fancyhead and \fancyfoot with several selectors passed as parameters. Let's see:
-%% - E for even page
-%% - O for odd page
-%% - L for left side
-%% - C for centered
-%% - R for right side
-%\fancyhead[LE,RO]{external side}
-%\fancyhead[RE,LO]{internal side}
-%\fancyfoot[CE,CO]{\leftmark}
-%\fancyfoot[LE,RO]{ext \thepage}
-%\fancyhead[R]{}
-% Set the right side of the footer to be the page number
-\fancyfoot[R]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+%% Si può aggiungere intestazioni e pié di pagina personalizzati con rispettivamente i comandi \fancyhead e \fancyfoot. A questi, tra parentesi rettangolare, si possono aggiungere dei selettori che permettono di configurare una specifica zona:
+% - E per indicare pagine pari (even page)
+% - O per indicare pagine dispari (odd page)
+% - L per indicare la zona sinistra (left side)
+% - C per indicare la zona centrale (centered side)
+% - R for indicare la zona destra (right side)
+% Nel nostro caso mettiamo il numero di pagina (\thepage) nel piè di pagina a destra [R]
+\fancyfoot[R]{\thepage}
+
+% Questa configurazione permette di cambiare la larghezza del testo tra la prima e le pagine successive
 \usepackage{everyshi}
 \AtNextShipout{\global\leftskip=-4.25cm\relax}
 
-%%%%%%%% DECORATIVE setup
-%% This sets the header line thickness to 2pt.
-%\renewcommand{\headrulewidth}{2pt}
-\renewcommand{\headrulewidth}{0pt}
-%% Sets the footer line thickness to 1pt.
-%\renewcommand{\footrulewidth}{1pt}
-
-
-% manages the left margin images
+% queste configurazioni permettono di gestire la barra laterale
 \usepackage{tikz}
-
-\usepackage{lipsum}
-
 \usepackage{atbegshi}
 \usepackage{textpos}
-
+% Barra laterale delle pagine successive alla prima
 \TPGrid{8}{11}
 \AtBeginShipout{%
     \begin{textblock}{3}(-2.15,0)
         \includegraphics[width=.14\textwidth]{leftBar}
     \end{textblock}
 }
+% Barra laterale informativa della prima pagina (con i loghi ed info)
+\AtBeginShipoutFirst{
 
-%\hoffset=5.5cm
-%\voffset=56.9pt
-%\textwidth=11.5cm
-%\usepackage{parskip}
-% ***** ***** ***** PREAMBLE ***** ***** ***** end
-
-% ***** ***** ***** BODY ***** ***** ***** Begin
-% Start to write the content of our document (the body).
-\begin{document}
-    
     \begin{tikzpicture}[remember picture,overlay]
-        \node[anchor=north west,yshift=-2cm,xshift=2cm]
+        \node[anchor=north west,yshift=-1.5cm,xshift=2cm]
         at (current page.north west)
         {
             \includegraphics[width=.48\textwidth]{brancae}
         };
     \end{tikzpicture}
+}
+
+% Rimuove la rientranza ad inizio del paragrafo (indentazione)
+\setlength{\parindent}{0pt}
+
+% Questo lo puoi rimuovere. Per ora è usato solo per mettere un testo di esempio.
+\usepackage{lipsum}
+% ***** ***** ***** PREAMBOLO ***** ***** ***** Fine
+
+% ***** ***** ***** CORPO ***** ***** ***** Inizio
+% Da qui inizia il corpo (body) del documento. Puoi mettere il tuo testo a partire dalla riga 105 sostituendo '\lipsum[1-19]' senza rimuovere il comando \end{document} che serve per chiudere il corpo del documento
+\begin{document}
     \begin{flushleft}
-        \bfseries
-        %\large
-        Corpo Nazionale Giovani Esploratori ed Esploratrici Italiani\\Associazione di Promozione Sociale (ed) Ente Morale\\sotto l’Alto Patronato del Presidente della Repubblica
+        {\fontsize{11.5}{0}\selectfont\textbf{Corpo Nazionale Giovani Esploratori ed Esploratrici Italiani\\Associazione di Promozione Sociale (ed) Ente Morale\\sotto l’Alto Patronato del Presidente della Repubblica}}
         \newline
         \newline
         \newline
@@ -153,7 +104,6 @@
     
     \lipsum[1-19]
     
-    
     % End to write the content of our document (the body).
 \end{document}
-% ***** ***** ***** BODY ***** ***** ***** End
+% ***** ***** ***** CORPO ***** ***** ***** Fine
