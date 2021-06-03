@@ -1,4 +1,6 @@
+
 ![License](https://img.shields.io/badge/status-work%20in%20progress-red) ![License](https://img.shields.io/badge/version-0.0.0-yellow) ![License](https://img.shields.io/github/languages/top/scouting4bot/carta_intestata_latex)
+
 *Il progetto è ancora in fase di sviluppo (versione alpha). Per ora non consiglio l'uso.
 Per maggiori dettagli si veda il paragrafo sugli Sviluppi.*
 
@@ -7,7 +9,7 @@ Progetto basato sulla carta intestata dell'associazione scout [CNGEI](https://cn
 > Tutta l'immagine coordinata in un unico file, con la comodità di LaTeX
 
 ## Immagini e GIF
-n.d.
+**Questo paragrafo non è ancora completo!**
 
 # Indice
 - [Multilanguage](#multilanguage)
@@ -18,7 +20,7 @@ n.d.
 - [Sviluppi futuri](#sviluppi-futuri)
 
 ## Multilanguage
-Not available.
+Not available. The usage of this project is reserved to members of an italian scout association.
 
 # Come iniziare
 ## Prerequisiti
@@ -36,7 +38,6 @@ Not available.
 Per dettagli sulla immagine coordinata e la carta intestata del CNGEI, si rimanda alla documentazione disponibile nel [cloud associativo](https://cloud.cngei.it/index.php/apps/files/?dir=/Settori/Settore%20Comunicazione/KIT%20-%20Immagine%20COORDINATA&fileid=1901575).
 
 ---
-
 # Come contribuire
 
 ## Installare le dipendenze di sviluppo
@@ -54,47 +55,32 @@ Una descrizione schematica del progetto:
 ```	
 
 ## Community
-Scourting4bot ha uno spazio su [Slack](https://slack.com).
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md)
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)]()
-
-Il Code of Conduct regolamenta le interazioni tra i vari attori di un
-repository. Tendenzialmente è bene che questo incoraggi qualsiasi tipo di
-contribuzione. Esistono diversi template già preimpostati che, dopo attenta
-analisi, si possono incorporare nel proprio progetto. Il Team per la
-Trasformazione Digitale adotta [questo Codice](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md). 
+Scourting4bot ha uno spazio su [Slack](https://slack.com), ad oggi poco attivo.
 
 ### Segnalazione bug e richieste di aiuto
-Se noti malfunzionamenti, puoi segnalarli usando lo strumento `Issue` di GitHub. Non temere di segnalare: ogni issue è un passo avanti verso un prodotto migliore.
+Se noti malfunzionamenti, puoi segnalarli usando lo strumento `Issue` di GitHub. Non temere di segnalare errori o suggerire nuovi sviluppi: ogni issue è un passo avanti verso un prodotto migliore.
 
 ### Semantic Versioning
-Per il versionamento si cerda di seguire la modalità [Semantic Versioning](https://semver.org/). Ovviamente, se noti che qualcosa non torna, segnalalo.
+Per il versionamento si cerca di seguire la modalità [Semantic Versioning](https://semver.org/).
 
 ## Manutenzione 
-Attualmente il progetto è in sviluppo. Per segnalazioni o suggerimenti usa lo strumento `Issue` di GitHub.
+Attualmente il progetto è in sviluppo.
 
 ---
 # Licenza 
-## Licenza generale 
-Di norma, la licenza è indicata in modo abbreviato nel file README in quanto la
-sua versione estesa è presente in un file dedicato chiamato `LICENSE.md`
-presente, di norma, nella root del repository.  Per avere un aiuto nel percorso
-di scelta di una licenza è possibile visitare
-[Choose a License](https://choosealicense.com/).
-Per i progetti del Team Digitale le licenze preferibili sono
-[queste](https://github.com/teamdigitale/licenses).
-
-## Autori e Copyright
 * Ogni logo ed il formato della carta intestata è di proprietà del [CNGEI](https://cngei.it/).
 * Il font Montserrat è utilizzato secondo [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-* Il copyright del resto del codice (main.text) è di `Scouting4Bot e tutti i contributori` ma può essere liberamente usato da chiunque, per ruolo od incarico, abbia il diritto d'uso della carta intestata dell'associazione (dirigenti, educatori, branche, settori, gruppi di lavoro, etc).
+* Il resto del codice (main.text) è di `Scouting4Bot e tutti i contributori` ma può essere liberamente usato da chiunque, per ruolo od incarico, abbia il diritto d'uso della carta intestata dell'associazione (dirigenti, educatori, branche, settori, gruppi di lavoro, etc).
 
 ## Licenze software dei componenti di terze parti
 L'analisi è stata eseguita con [FOSSA](https://fossa.com/pricing/). 
 
 # Sviluppi futuri
  - **versione 0.1.0**
-   - [ ] redme
+   - [ ] licenza
+   - [ ] readme
      - [x] ~~struttura~~
      - [ ] [badges](https://shields.io/)
      - [ ] gif con [Recordit](http://recordit.co/)
